@@ -1,9 +1,10 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+import sys
+
 import pygame as pygame
 
-
-from code.const import WIN_WIDTH, WIN_HEIGHT
+from code.const import WIN_WIDTH, WIN_HEIGHT, MENU_OPTION
 from code.Menu import Menu
 
 
@@ -14,12 +15,13 @@ class Game:
         self.window = pygame.display.set_mode(size=(WIN_WIDTH, WIN_HEIGHT))
 
     def run(self):
+
         while True:
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    print('Loop end')
-                    pygame.quit()
-                    quit()
             menu = Menu(self.window)
-            menu.run()
-            pass
+            menu_return = menu.run()
+
+            if menu_return in [MENU_OPTION[0], MENU_OPTION[1], MENU_OPTION[2]]:
+                pass
+            else:
+                pygame.quit()
+                sys.exit()
