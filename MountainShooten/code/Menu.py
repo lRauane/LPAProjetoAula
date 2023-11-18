@@ -4,7 +4,7 @@ import pygame.image
 from pygame import Surface, Rect
 from pygame.font import Font
 
-from code.const import WIN_WIDTH, COLOR_ORANGE, MENU_OPTION, COLOR_WHITE, COLOR_GREEN, COLOR_YELLOW
+from code.Const import WIN_WIDTH, COLOR_ORANGE, MENU_OPTION, COLOR_WHITE, COLOR_GREEN, COLOR_YELLOW
 
 
 class Menu:
@@ -50,7 +50,7 @@ class Menu:
                             menu_option = len(MENU_OPTION) - 1
 
                     if event.key == pygame.K_RETURN:
-                        return MENU_OPTION(menu_option)
+                        return MENU_OPTION[menu_option]
 
     def menu_text(self, text_size: int, text: str, text_color: tuple, text_center_pos: tuple):
         text_font: Font = pygame.font.SysFont(name="Courier New", size=text_size, bold=True)
