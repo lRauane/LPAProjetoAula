@@ -13,6 +13,7 @@ class Level:
         self.entity_list: list[Entity] = []
         self.mode = menu_option  # opção do menu / 1 ou 2 players
         self.name = name
+
         self.entity_list.extend(EntityFactory.get_entity('Level1Bg'))
 
     def run(self, ):
